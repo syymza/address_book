@@ -1,6 +1,7 @@
 'use strict';
 
 var jsonFile = require('jsonfile');
+var Util = require('./util');
 
 var Contact = {};
 
@@ -23,12 +24,12 @@ Contact.createContact = function (str) {
 };
 
 Contact.loadContacts = function (done) {
-    var file = './data.json';
+    var file = Util.getDataPath();
     jsonFile.readFile(file, done);
 };
 
 Contact.saveContacts = function (contacts, done) {
-    var file = './data.json';
+    var file = Util.getDataPath();
     jsonFile.writeFile(file, contacts, done);
 };
 
