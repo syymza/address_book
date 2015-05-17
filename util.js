@@ -1,3 +1,7 @@
+'use strict';
+
+var path = require('path');
+
 var Util = {};
 
 Util.getHomeDirectory = function() {
@@ -14,6 +18,10 @@ Util.getHomeDirectory = function() {
             return 'Unsupported OS';
     }
 
+};
+
+Util.getDataPath = function () {
+    return path.join(this.getHomeDirectory(), 'data.json');
 };
 
 module.exports = Util;
