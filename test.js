@@ -1,5 +1,5 @@
 var Command = require('./command');
 
-Command.add(function(err) {
-    console.log('Contact added!')
+Command.find(function() {
+    console.log('Find complete!')
 });
