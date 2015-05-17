@@ -1,5 +1,7 @@
 'use strict';
 
+var jsonFile = require('jsonfile');
+
 var Contact = {};
 
 Contact.parseName = function (str) {
@@ -18,6 +20,11 @@ Contact.createContact = function (str) {
         name: this.parseName(str),
         number: this.parseNumber(str)
     }
+};
+
+Contact.loadContacts = function (done) {
+    var file = './data.json';
+    jsonFile.readFile(file, done);
 };
 
 module.exports = Contact;

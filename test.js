@@ -10,3 +10,7 @@ var contactObj = Contact.createContact(testContact);
 console.log(name);
 console.log(number);
 console.log(contactObj);
+
+Contact.loadContacts(function(err, data) {
+    console.log(data);
+});
