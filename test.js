@@ -29,6 +29,7 @@ Contact.saveContacts(contactsArr, function(err) {
 
     if (err) {
         console.log(err);
+        return;
     }
     console.log('success');
 });
