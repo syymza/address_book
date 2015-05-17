@@ -49,4 +49,21 @@ Contact.saveContact = function (contact, done) {
     });
 };
 
+Contact.findContacts = function (name, done) {
+
+    this.loadContacts(function (err, contacts) {
+
+        if (err) {
+            return done(err);
+        }
+
+        var foundContacts = contacts.filter(function (contact) {
+            return contact.name === name
+        });
+
+        done (null, foundContacts);
+
+    });
+};
+
 module.exports = Contact;
